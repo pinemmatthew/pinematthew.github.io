@@ -3,12 +3,25 @@
 
 @import "{{ site.theme }}";
 
-/* Portfolio overrides */
+:root {
+  --background: #fbf8e9;
+  --surface: #f2eedc;
+  --surface-dark: #ebe5d1;
+
+  --text: #17212c;
+  --text-soft: #4d5660;
+  --text-muted: #74766f;
+
+  --accent: #a56f27;
+  --accent-hover: #79501c;
+
+  --border: #d8d1bb;
+  --white: #fffdf5;
+}
 
 body {
-  background: #fbf8f1;
-  color: #1d292b;
-  font-family: Georgia, "Times New Roman", serif;
+  background: var(--background);
+  color: var(--text);
 }
 
 .inner {
@@ -23,7 +36,7 @@ body {
 h1,
 h2,
 h3 {
-  color: #153f49;
+  color: var(--text);
 }
 
 h1 {
@@ -36,25 +49,25 @@ h2 {
 }
 
 p {
-  color: #354547;
+  color: var(--text-soft);
   line-height: 1.75;
   font-size: 1.05rem;
 }
 
 a {
-  color: #125163;
+  color: var(--accent-hover);
   font-weight: 600;
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
 
 a:hover {
-  color: #0a3742;
+  color: var(--text);
 }
 
 hr {
   border: 0;
-  border-top: 1px solid #cfc7ba;
+  border-top: 1px solid var(--border);
   margin: 3rem 0;
 }
 
@@ -66,10 +79,16 @@ hr {
 }
 
 .project-card {
-  border: 1px solid #cfc7ba;
-  background: #fffdf8;
+  background: var(--white);
+
+  border: 1px solid var(--border);
+  border-top: 4px solid var(--accent);
+
   padding: 1.6rem;
-  border-radius: 10px;
+  border-radius: 6px;
+
+  box-shadow:
+    0 8px 24px rgba(23, 33, 44, 0.06);
 }
 
 .project-card h3 {
@@ -77,30 +96,43 @@ hr {
 }
 
 .project-meta {
-  font-family: Arial, sans-serif;
-  font-size: 0.8rem;
+  color: var(--accent-hover);
+
+  font-family:
+    ui-monospace,
+    "Cascadia Code",
+    "Courier New",
+    monospace;
+
+  font-size: 0.78rem;
+  font-weight: 700;
+
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #5f6a6b;
 }
 
 .portfolio-button {
   display: inline-block;
-  padding: 0.65rem 1rem;
-  border: 2px solid #154c59;
-  border-radius: 5px;
-  text-decoration: none;
+
+  padding: 0.7rem 1.1rem;
   margin-right: 0.5rem;
+
+  border: 2px solid var(--text);
+  border-radius: 4px;
+
+  color: var(--text);
+
+  text-decoration: none;
 }
 
 .portfolio-button:hover {
-  background: #154c59;
-  color: white;
+  background: var(--text);
+  color: var(--background);
 }
 
 a:focus-visible {
-  outline: 3px solid #154c59;
-  outline-offset: 3px;
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
 }
 
 @media (max-width: 700px) {
